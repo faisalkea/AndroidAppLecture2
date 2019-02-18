@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setupS2();
 
         if(savedInstanceState != null){
-            Log.d(TAG, "Reading from bundle");
+            Log.d(TAG, "Reading from bundle, Stud: " + savedInstanceState.getString(STUD) + " Grade: " + savedInstanceState.getString(GRADE) );
 
             tv3.setText(savedInstanceState.getString(STUD));
             tv4.setText(savedInstanceState.getString(GRADE));
@@ -55,47 +55,47 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onSaveInstanceState(Bundle outState){
-        Log.d(TAG, "onSaveInstanceState called");
-
-        outState.putString(STUD, "Student: " + stud);
-        outState.putString(GRADE, "Grade: " + grade);
         super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState called, stud: " + stud + ", grade: " + grade);
+
+        outState.putString(STUD, tv3.getText().toString());
+        outState.putString(GRADE, tv4.getText().toString());
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "OnStart() called");
+        //Log.d(TAG, "OnStart() called");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "OnResume() called");
+        //Log.d(TAG, "OnResume() called");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "OnPause() called");
+        //Log.d(TAG, "OnPause() called");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "OnStop() called");
+        //Log.d(TAG, "OnStop() called");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG, "OnRestart() called");
+        //Log.d(TAG, "OnRestart() called");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "OnDestroy() called");
+        //Log.d(TAG, "OnDestroy() called");
     }
 
     private void setupS1() {
